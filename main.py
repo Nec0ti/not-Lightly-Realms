@@ -34,19 +34,19 @@ realms = {
 # Level design settings
 levels = {
     1: [
-        {"position": (100, 100), "color": GRAY},
-        {"position": (300, 300), "color": GRAY},
-        {"position": (500, 500), "color": GRAY}
+        {"position": (100, 100), "color": GRAY, "dragging": False},
+        {"position": (300, 300), "color": GRAY, "dragging": False},
+        {"position": (500, 500), "color": GRAY, "dragging": False}
     ],
     2: [
-        {"position": (200, 200), "color": GRAY},
-        {"position": (400, 400), "color": GRAY},
-        {"position": (600, 600), "color": GRAY}
+        {"position": (200, 200), "color": GRAY, "dragging": False},
+        {"position": (400, 400), "color": GRAY, "dragging": False},
+        {"position": (600, 600), "color": GRAY, "dragging": False}
     ],
     3: [
-        {"position": (150, 150), "color": GRAY},
-        {"position": (350, 350), "color": GRAY},
-        {"position": (550, 550), "color": GRAY}
+        {"position": (150, 150), "color": GRAY, "dragging": False},
+        {"position": (350, 350), "color": GRAY, "dragging": False},
+        {"position": (550, 550), "color": GRAY, "dragging": False}
     ]
 }
 
@@ -107,8 +107,15 @@ while True:
 
         # Check for collision with player
         if obstacle_rect.collidepoint(player_x, player_y):
+            # Set the dragging flag when the player collides with the box
             if keys[pygame.K_SPACE]:
-                obstacle["position"] = pygame.mouse.get_pos()
+                obstacle["dragging"] = True
+            elif not pygame.mouse.get_pressed()[0]:
+                obstacle["dragging"] = False
+
+        # Drag the box if the dragging flag is set
+        if obstacle["dragging"]:
+            obstacle["position"] = pygame.mouse.get_pos()
 
     # Update the screen
     pygame.display.flip()
