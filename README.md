@@ -1,2 +1,2 @@
 # Mystic-Realms
-Mini Gamejam 150
+this game made for Mini Gamejam 150
