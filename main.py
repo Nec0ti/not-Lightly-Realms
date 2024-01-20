@@ -38,9 +38,30 @@ light_radius = 100
 light_x, light_y = WIDTH // 2, HEIGHT // 2
 
 # Levels
-current_level = 0
+#levels = {
+#    0: [
+#        {"position": (100, 100), "color": BLACK,},
+#        {"position": (300, 300), "color": BLACK,},
+#        {"position": (500, 500), "color": BLACK,}
+#    ],
+#    1: [
+#        {"position": (100, 100), "color": BLACK,},
+#        {"position": (300, 300), "color": BLACK,},
+#        {"position": (500, 500), "color": BLACK,}
+#    ],
+#    2: [
+#        {"position": (200, 200), "color": BLACK,},
+#        {"position": (400, 400), "color": BLACK,},
+#        {"position": (600, 600), "color": BLACK,}
+#    ],
+#    3: [
+#        {"position": (150, 150), "color": BLACK,},
+#        {"position": (542, 566), "color": BLACK,},
+#        {"position": (550, 720), "color": BLACK,}
+#    ]
+#}
 
-levels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+current_level = 0
 
 # Main game loop
 while True:
@@ -49,13 +70,36 @@ while True:
             pygame.quit()
             sys.exit()
             
+    
+    collide = pygame.Rect.colliderect(player_rect, box_rect3)
+
+    # When collides correct object scene count +1
+    if collide:
+        pygame.mixer.init()
+        pygame.mixer.music.load("sounds/object.wav")
+        pygame.mixer.music.set_volume(1)
+        pygame.mixer.music.play(1)
+        current_level += 1
+        
     screen.fill(BLACK)
 
-    pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
-    pygame.draw.rect(screen, BLACK, box_rect1)
-    pygame.draw.rect(screen, BLACK, box_rect2)
-    pygame.draw.rect(screen, BLACK, box_rect3)
-    pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
+    #pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
+    #pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
+    
+        
+    if current_level == 0:
+        pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
+        pygame.draw.rect(screen, BLACK, box_rect1)
+        pygame.draw.rect(screen, BLACK, box_rect2)
+        pygame.draw.rect(screen, BLACK, box_rect3)
+        pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
+        
+    if current_level == 1:
+        pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
+        pygame.draw.rect(screen, BLACK, box_rect1)
+        pygame.draw.rect(screen, BLACK, box_rect2)
+        pygame.draw.rect(screen, BLACK, box_rect3)
+        pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
 
     pygame.display.update()
 
