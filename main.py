@@ -48,7 +48,7 @@ light_x, light_y = WIDTH // 2, HEIGHT // 2
 # Levels
 levels = {
     0: {
-        "background_color": RED,
+        "background_color": BLACK,
         "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
                   pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
                   pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
