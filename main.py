@@ -48,78 +48,78 @@ light_x, light_y = WIDTH // 2, HEIGHT // 2
 # Levels
 levels = {
     0: {
-        "background_color": BLACK,
-        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+        "background_color": RED,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
     },
     1: {
         "background_color": BLACK,
-        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
     },
     2: {
         "background_color": BLACK,
-        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
     },
     3: {
         "background_color": BLACK,
-        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
     },
     4: {
         "background_color": BLACK,
-        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
     },
     5: {
         "background_color": BLACK,
-        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
     },
     6: {
         "background_color": BLACK,
-        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
-                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 800), 40, 40)]
     }
 }
 
@@ -127,14 +127,17 @@ current_level = 0
 
 # Text
 font = pygame.font.Font('fonts/Pixel.TTF', 32)
-text = font.render(f'Current Level: {current_level}', True, GOLD, BLUE)
+text = font.render(f'Current Level {current_level}', True, GOLD)
 textRect = text.get_rect()
 textRect.center = (1600 // 2, 900 // 2)
 
-level_text = font.render(f'Current Level: {current_level}', True, GOLD, BLUE)
+level_text = font.render(f'Current Level {current_level}', True, GOLD)
 level_text_rect = level_text.get_rect()
 level_text_rect.center = (1600 // 2, 50)
-screen.blit(level_text, level_text_rect)
+
+objective_text = font.render(f'Objective\n  Collect  hidden  boxes  With  your  light', True, GOLD)
+objective_text_rect = level_text.get_rect()
+objective_text_rect.center = (1600 // 2.5, 100)
 
 # Main game loop
 while True:
@@ -143,7 +146,6 @@ while True:
             pygame.quit()
             sys.exit()
     
-    screen.blit(text, textRect)
     collide = pygame.Rect.colliderect(player_rect, levels[current_level]["boxes"][0])
     
     # When collides correct object scene count +1
@@ -153,8 +155,12 @@ while True:
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(1)
         current_level += 1
+        level_text = font.render(f'Current Level {current_level}', True, GOLD)
+        objective_text = font.render(f' ', True, GOLD)
 
     screen.fill(levels[current_level]["background_color"])
+    screen.blit(level_text, level_text_rect)
+    screen.blit(objective_text, objective_text_rect)
     
     pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
     pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
@@ -164,7 +170,6 @@ while True:
           
     #pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
     #pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
-    
 
     pygame.display.update()
 
@@ -187,7 +192,7 @@ while True:
     
     light_x = player_rect.x + 25
     light_y = player_rect.y + 25
-
+    
     deltatime = clock.tick(60) / 1000
     
     if current_level >= len(levels):
