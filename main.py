@@ -1,5 +1,12 @@
 import pygame
 import sys
+import random
+import pygame_gui
+
+from pygame_gui.ui_manager import UIManager
+from pygame_gui.elements.ui_text_box import UITextBox
+from pygame_gui.core import IncrementalThreadedResourceLoader, ObjectID
+from pygame_gui import UI_TEXT_BOX_LINK_CLICKED, UI_TEXT_EFFECT_FINISHED
 from pygame.locals import *
 
 
@@ -37,31 +44,97 @@ deltatime = 0
 light_radius = 100
 light_x, light_y = WIDTH // 2, HEIGHT // 2
 
+
 # Levels
-#levels = {
-#    0: [
-#        {"position": (100, 100), "color": BLACK,},
-#        {"position": (300, 300), "color": BLACK,},
-#        {"position": (500, 500), "color": BLACK,}
-#    ],
-#    1: [
-#        {"position": (100, 100), "color": BLACK,},
-#        {"position": (300, 300), "color": BLACK,},
-#        {"position": (500, 500), "color": BLACK,}
-#    ],
-#    2: [
-#        {"position": (200, 200), "color": BLACK,},
-#        {"position": (400, 400), "color": BLACK,},
-#        {"position": (600, 600), "color": BLACK,}
-#    ],
-#    3: [
-#        {"position": (150, 150), "color": BLACK,},
-#        {"position": (542, 566), "color": BLACK,},
-#        {"position": (550, 720), "color": BLACK,}
-#    ]
-#}
+levels = {
+    0: {
+        "background_color": BLACK,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+    },
+    1: {
+        "background_color": BLACK,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+    },
+    2: {
+        "background_color": BLACK,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+    },
+    3: {
+        "background_color": BLACK,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+    },
+    4: {
+        "background_color": BLACK,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+    },
+    5: {
+        "background_color": BLACK,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+    },
+    6: {
+        "background_color": BLACK,
+        "boxes": [pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40),
+                  pygame.Rect(random.randint(0, 1550), random.randint(0, 850), 40, 40)]
+    }
+}
 
 current_level = 0
+
+# Text
+font = pygame.font.Font('fonts/Pixel.TTF', 32)
+text = font.render(f'Current Level: {current_level}', True, GOLD, BLUE)
+textRect = text.get_rect()
+textRect.center = (1600 // 2, 900 // 2)
+
+level_text = font.render(f'Current Level: {current_level}', True, GOLD, BLUE)
+level_text_rect = level_text.get_rect()
+level_text_rect.center = (1600 // 2, 50)
+screen.blit(level_text, level_text_rect)
 
 # Main game loop
 while True:
@@ -69,37 +142,29 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-            
     
-    collide = pygame.Rect.colliderect(player_rect, box_rect3)
-
+    screen.blit(text, textRect)
+    collide = pygame.Rect.colliderect(player_rect, levels[current_level]["boxes"][0])
+    
     # When collides correct object scene count +1
     if collide:
         pygame.mixer.init()
         pygame.mixer.music.load("sounds/object.wav")
-        pygame.mixer.music.set_volume(1)
+        pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(1)
         current_level += 1
-        
-    screen.fill(BLACK)
 
+    screen.fill(levels[current_level]["background_color"])
+    
+    pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
+    pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
+    
+    for box in levels[current_level]["boxes"]:
+        pygame.draw.rect(screen, BLACK, box)
+          
     #pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
     #pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
     
-        
-    if current_level == 0:
-        pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
-        pygame.draw.rect(screen, BLACK, box_rect1)
-        pygame.draw.rect(screen, BLACK, box_rect2)
-        pygame.draw.rect(screen, BLACK, box_rect3)
-        pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
-        
-    if current_level == 1:
-        pygame.draw.circle(screen, WHITE, (int(light_x), int(light_y)), light_radius)
-        pygame.draw.rect(screen, BLACK, box_rect1)
-        pygame.draw.rect(screen, BLACK, box_rect2)
-        pygame.draw.rect(screen, BLACK, box_rect3)
-        pygame.draw.rect(screen, LIGHT_BLUE, player_rect)
 
     pygame.display.update()
 
@@ -119,7 +184,13 @@ while True:
         light_x += player_speed * deltatime
         
     pygame.display.flip()
+    
+    light_x = player_rect.x + 25
+    light_y = player_rect.y + 25
 
     deltatime = clock.tick(60) / 1000
+    
+    if current_level >= len(levels):
+        pass # Finish screen
 
 pygame.quit()
